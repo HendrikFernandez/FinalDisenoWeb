@@ -1,0 +1,33 @@
+<table ng-controller="CalendarioController" class="table table-bordered table-responsive">
+	<thead>
+		<th>
+			Fecha
+		</th>
+		<th>
+			Equipo
+		</th>
+		<th>
+			Hora
+		</th>
+		<th>
+			Pabellón
+		</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="calendario in calendarios">
+			<td>
+				{{calendario.fecha}}
+			</td>
+			<td>
+				{{calendario.equipo}}
+			</td>
+			<td>
+				{{calendario.hora}}
+			</td>
+			<td>
+				{{calendario.pabellon}}
+			</td>
+		</tr>
+	</tbody>
+	
+</table>

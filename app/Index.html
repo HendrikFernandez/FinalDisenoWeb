@@ -1,10 +1,97 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Contenido</title>
+<html lang="en">
 
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BCD</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 </head>
-<body>
-<h1>Thu real chamikito</h1>
+
+<body ng-app="BCD" style="background-image: url('img/fondo.jpg'); text-shadow: white 0px 0px 10px; color: white;" >
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Liga BCD
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Equipos</a>
+                </li>
+                <li>
+                    <a href="#">Partidas</a>
+                </li>
+                <li>
+                    <a href="#">Pabellones</a>
+                </li>
+                <li>
+                    <a ng-href="#calendario">Calendario</a>
+                </li>
+                <li>
+                    <a ng-href="#about">Sobre la página</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Bienvenido a la liga BCD</h1>
+                        <p>En nuestra página web podra ver los equipos, los jugadores y tambien las estadísticas de los partidos!</p>
+                        
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menú</a>
+                        <ng-view></ng-view>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+<script src="angular-app.js"></script>
+<script src="calendario.controller.js"></script>
 </body>
+
 </html>
