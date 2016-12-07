@@ -1,0 +1,20 @@
+<table ng-controller="PabellonController" class="table table-bordered table-responsive">
+	<thead>
+		<th>Nombre</th>
+		<th>Dirección</th>
+		<th>Asientos</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="pabellon in pabellones">
+			<td>
+				{{pabellon.nombre}}
+			</td>
+			<td>
+				{{pabellon.direccion}}
+			</td>
+			<td>
+				{{pabellon.asientos}}
+			</td>
+		</tr>
+	</tbody>
+</table>
