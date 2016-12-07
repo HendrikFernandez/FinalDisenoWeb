@@ -68,6 +68,51 @@ app.get("/api/pabellon",function(req,res){
 		res.send(JSON.stringify(data));
 
 });
+app.get("/api/partida",function(req,res){
+	var data = [
+		{
+			"fecha":"1/12/2016",
+			"pabellon":"Bella Vista",
+			"equipos":"Bella Vista Vs. Los Rios",
+			"estadisticas":{
+				"equipo1":{
+					"nombre":"Bella Vista",
+					"jugadores":[{
+						"nombre":"Papolo",
+						"puntos":"34",
+						"dunkeos":4,
+						"rebotes":7
+					},
+					{
+						"nombre":"Hendrik",
+						"puntos":"100",
+						"dunkeos":40,
+						"rebotes":1
+					}]
+				},
+				"equipo2":{
+					"nombre":"Los Rios",
+					"jugadores":[{
+						"nombre":"Norman",
+						"puntos":"60",
+						"dunkeos":7,
+						"rebotes":3
+					},
+					{
+						"nombre":"Adelina",
+						"puntos":"500",
+						"dunkeos":70,
+						"rebotes":60
+					}]
+				}
+			}
+		}
+
+	];
+	res.send(JSON.stringify(data));
+});
+
+
 
 app.listen(process.env.PORT || 3000, function(){
 	console.log("Se ha inicializado con exito!")

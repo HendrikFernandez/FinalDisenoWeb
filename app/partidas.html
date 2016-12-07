@@ -1,0 +1,95 @@
+<div ng-controller="PartidaController">
+
+<table class="table table-bordered table-responsive">
+	<thead>
+		<th>Fecha</th>
+		<th>Pabellón</th>
+		<th>Equipos</th>
+		<th></th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="partida in partidas">
+			<td>
+				{{partida.fecha}}
+			</td>
+			<td>
+				{{partida.pabellon}}
+			</td>
+			<td>
+				{{partida.equipos}}
+			</td>
+			<td>
+			<button type="button" ng-click="verEstadistica(partida)" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ver estadísticas</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title" style="color: black;">Estadísticas</h4>
+        </div>
+        <div class="modal-body modal-lg" style="color: black;" >
+        <label>Casa: {{casa}}</label>
+          <table class="table table-bordered table-responsive">
+          	<thead>
+          	<th>Nombre</th>
+          	<th>Puntos</th>
+          	<th>Dunkeos</th>
+          	<th>Rebotes</th>
+          	</thead>
+          	<tbody>
+          	<tr ng-repeat="jugador in jugadores1">
+          		<td>
+          			{{jugador.nombre}}
+          		</td>
+          		<td>
+          			{{jugador.puntos}}
+          		</td>
+          		<td>
+          			{{jugador.dunkeos}}
+          		</td>
+          		<td>
+          			{{jugador.rebotes}}
+          		</td>
+          		</tr>
+          	</tbody>
+          </table>
+          <label>Visitantes: {{visitante}}</label>
+          <table class="table table-bordered table-responsive">
+          	<thead>
+          	<th>Nombre</th>
+          	<th>Puntos</th>
+          	<th>Dunkeos</th>
+          	<th>Rebotes</th>
+          	</thead>
+          	<tbody>
+          	<tr ng-repeat="jugador in jugadores2">
+          		<td>
+          			{{jugador.nombre}}
+          		</td>
+          		<td>
+          			{{jugador.puntos}}
+          		</td>
+          		<td>
+          			{{jugador.dunkeos}}
+          		</td>
+          		<td>
+          			{{jugador.rebotes}}
+          		</td>
+          		</tr>
+          	</tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+</div>
