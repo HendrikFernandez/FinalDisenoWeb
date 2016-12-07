@@ -6,6 +6,10 @@ var app = express();
 app.use(express.static('app'));
 
 app.use('/', express.static('app'));
+app.get('/', function(req, res){
+	res.send('@');
+})
+
 app.get("/api/calendario",function(req,res){
 	var data = [
 		{
