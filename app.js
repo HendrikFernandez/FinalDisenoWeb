@@ -115,8 +115,8 @@ app.get("/api/partida",function(req,res){
 app.get("/api/equipos",function(req,res){
 	var data = [{
 		"nombre": "Bella Vista",
-		"logo": "img/bellavista.png"
-		"Jugadores":[{
+		"logo": "img/bellavista.png",
+		"jugadores":[{
 			"nombre":"Hendrik Fernandez",
 			"dorsal":23,
 			"posicion":"Pívot",
@@ -146,8 +146,10 @@ app.get("/api/equipos",function(req,res){
 			"posicion":"Alero",
 			"estatura":3.9
 		}]
-	}]
 
+	}];
+	res.send(JSON.stringify(data));
+});
 
 app.listen(process.env.PORT || 3000, function(){
 	console.log("Se ha inicializado con exito!")
