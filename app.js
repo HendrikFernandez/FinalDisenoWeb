@@ -7,7 +7,7 @@ app.use(express.static('app'));
 
 app.use('/', express.static('app'));
 app.get('/', function(req, res){
-	res.send('@');
+	res.sendFile(__dirname + "/index.html");
 })
 
 app.get("/api/calendario",function(req,res){
@@ -112,6 +112,41 @@ app.get("/api/partida",function(req,res){
 	res.send(JSON.stringify(data));
 });
 
+app.get("/api/equipos",function(req,res){
+	var data = [{
+		"nombre": "Bella Vista",
+		"logo": "img/bellavista.png"
+		"Jugadores":[{
+			"nombre":"Hendrik Fernandez",
+			"dorsal":23,
+			"posicion":"Pívot",
+			"estatura":6.0
+		},
+		{
+			"nombre":"Norman Fernandez",
+			"dorsal":12,
+			"posicion":"Ala-pívot",
+			"estatura":5.9
+		},
+		{
+			"nombre":"Adelina Fernandez",
+			"dorsal":1,
+			"posicion":"Escolta",
+			"estatura":3.5
+		},
+		{
+			"nombre":"Aldemir Fernandez",
+			"dorsal":13,
+			"posicion":"Base",
+			"estatura":4.3
+		},
+		{
+			"nombre":"Elias Cedeño",
+			"dorsal":22,
+			"posicion":"Alero",
+			"estatura":3.9
+		}]
+	}]
 
 
 app.listen(process.env.PORT || 3000, function(){
