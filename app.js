@@ -39,12 +39,34 @@ app.get("/api/calendario",function(req,res){
 
 		}
 
-
-
-
 	];
 	res.send(JSON.stringify(data));
 	
+});
+
+app.get("/api/pabellon",function(req,res){
+	var data = [
+
+		{
+		"nombre":"Pabellon de Bella Vista",
+		"direccion":"Desiderio Arias #34",
+		"asientos":100},
+
+		{
+
+		"nombre":"Pabellon de Los Rios",
+		"direccion":"Calle Proyecto #34",
+		"asientos":180
+		},
+
+		{
+		"nombre":"Pabellon Los Alcarrizos",
+		"direccion":"Autopista Duarte #1003",
+		"asientos":9001
+		}
+	];
+		res.send(JSON.stringify(data));
+
 });
 
 app.listen(process.env.PORT || 3000, function(){
