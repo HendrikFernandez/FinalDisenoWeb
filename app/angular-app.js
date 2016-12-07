@@ -3,17 +3,17 @@ var app= angular.module("BCD",["ngRoute"]);
 app.config(function($routeProvider) {
   $routeProvider
   .when("/equipos", {
-    templateUrl : "equipos.html"
+    templateUrl : "app/equipos.html"
   })
   .when("/partidas", {
-    templateUrl : "partidas.html"
+    templateUrl : "app/partidas.html"
   })
   .when("/pabellon", {
-    templateUrl : "pabellon.html"
+    templateUrl : "app/pabellon.html"
   })
   .when("/calendario", {
-    templateUrl : "calendario.html"
+    templateUrl : "app/calendario.html"
   }).when("/about", {
-    templateUrl : "about.html"
+    templateUrl : "app/about.html"
   });
 });

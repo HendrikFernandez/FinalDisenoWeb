@@ -5,9 +5,9 @@ var app = express();
 
 app.use(express.static('app'));
 
-app.use('/', express.static('app'));
+app.use('/app', express.static('app'));
 app.get('/', function(req, res){
-	res.sendFile(__dirname + "/app/index.html");
+	res.sendFile(__dirname + "/index.html");
 })
 
 app.get("/api/calendario",function(req,res){
