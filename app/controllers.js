@@ -30,3 +30,14 @@ app.controller("PartidaController",function($scope,$http){
 		console.log($scope.selected);
 	}
 });
+
+app.controller("EquiposController",function($scope,$http){
+	$http.get("api/equipos").then(function(request){
+		$scope.equiposes = request.data;
+	},function(error){
+		alert(error);
+	});
+	$scope.verDetalles = function(equipo){
+		$scope.jugadores = equipo.jugadores;
+	}
+});

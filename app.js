@@ -7,7 +7,7 @@ app.use(express.static('app'));
 
 app.use('/', express.static('app'));
 app.get('/', function(req, res){
-	res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/app/index.html");
 })
 
 app.get("/api/calendario",function(req,res){
@@ -147,6 +147,73 @@ app.get("/api/equipos",function(req,res){
 			"estatura":3.9
 		}]
 
+
+	},{
+		"nombre": "Los Rios",
+		"logo": "img/losrios.png",
+		"jugadores":[{
+			"nombre":"Jugador 1",
+			"dorsal":23,
+			"posicion":"Pívot",
+			"estatura":6.0
+		},
+		{
+			"nombre":"Jugador 2",
+			"dorsal":12,
+			"posicion":"Ala-pívot",
+			"estatura":5.9
+		},
+		{
+			"nombre":"Jugador 3",
+			"dorsal":1,
+			"posicion":"Escolta",
+			"estatura":3.5
+		},
+		{
+			"nombre":"Jugador 4",
+			"dorsal":13,
+			"posicion":"Base",
+			"estatura":4.3
+		},
+		{
+			"nombre":"Jugador 5",
+			"dorsal":22,
+			"posicion":"Alero",
+			"estatura":3.9
+		}]
+	},{
+		"nombre": "Los Alcarrizos",
+		"logo": "img/losalcarrizos.png",
+		"jugadores":[{
+			"nombre":"Jugador 1",
+			"dorsal":23,
+			"posicion":"Pívot",
+			"estatura":6.0
+		},
+		{
+			"nombre":"Jugador 2",
+			"dorsal":12,
+			"posicion":"Ala-pívot",
+			"estatura":5.9
+		},
+		{
+			"nombre":"Jugador 3",
+			"dorsal":1,
+			"posicion":"Escolta",
+			"estatura":3.5
+		},
+		{
+			"nombre":"Jugador 4",
+			"dorsal":13,
+			"posicion":"Base",
+			"estatura":4.3
+		},
+		{
+			"nombre":"Jugador 5",
+			"dorsal":22,
+			"posicion":"Alero",
+			"estatura":3.9
+		}]
 	}];
 	res.send(JSON.stringify(data));
 });
