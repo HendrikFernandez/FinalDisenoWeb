@@ -1,15 +1,11 @@
 var express = require('express');
 var path = require('path');
 
-
 var app = express();
 
+app.use(express.static('app'));
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(express.static(path.join(__dirname, 'app')));
-
-app.use('/', express.static(path.join(__dirname, 'app')));
+app.use('/', express.static('app'));
 app.get("/api/calendario",function(req,res){
 	var data = [
 		{
